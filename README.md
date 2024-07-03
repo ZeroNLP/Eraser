@@ -1,5 +1,5 @@
 # Eraser
-Released code for the paper [Eraser: Jailbreaking defense in large language models via unlearning harmful knowledge](https://arxiv.org/pdf/2404.05880).
+Source code for the paper [Eraser: Jailbreaking defense in large language models via unlearning harmful knowledge](https://arxiv.org/pdf/2404.05880).
 
 ## Installation
 Install a python environment and install dependency:
