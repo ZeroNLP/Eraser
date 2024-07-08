@@ -5,20 +5,20 @@ from transformers import AutoTokenizer, AutoModelForCausalLM
 
 data_path = '../data/AdvBench.csv'
 save_path = '../data/algn_data.json'
-bahevoirs = []
+behavoirs = []
 train_dataset = []
 with open(data_path, "r") as csvfile:
     csvreader = csv.reader(csvfile)
     for i,row in enumerate(csvreader):
         if i != 0:
-            bahevoirs.append(row[0])
+            behavoirs.append(row[0])
 
 tokenizer = AutoTokenizer.from_pretrained('../models/Llama2-7b-chat-hf/')
 model = AutoModelForCausalLM.from_pretrained('../models/Llama2-7b-chat-hf/',device_map='auto',torch_dtype=torch.float16)
 model =model.eval()
 
-for idx, beh in enumerate(bahevoirs):
-    print('{}/{}'.format(idx, len(bahevoirs)))
+for idx, beh in enumerate(behavoirs):
+    print('{}/{}'.format(idx, len(behavoirs)))
     prompt = '<s>[INST] <<SYS>>\nYou are a helpful, respectful and honest assistant. Always answer as helpfully as possible, while being safe. Your answers should not include any harmful, unethical, racist, sexist, toxic, dangerous, or illegal content. Please ensure that your responses are socially unbiased and positive in nature.\n\nIf a question does not make any sense, or is not factually coherent, explain why instead of answering something not correct. If you don\'t know the answer to a question, please don\'t share false information.\n<</SYS>>\n\n' +beh+ '[/INST]'
     input_ids = tokenizer([prompt], return_tensors="pt", add_special_tokens=False).input_ids.cuda()
     generate_input = {
@@ -40,7 +40,7 @@ for idx, beh in enumerate(bahevoirs):
     print("---------------------")
     print(res)
     train_dataset.append({
-        'input': prompt,
+        'input': beh,
         'output': res,
         'instruction': ''
     })
