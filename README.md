@@ -42,12 +42,3 @@ Please refer to https://github.com/llm-attacks/llm-attacks
 ## Evaluting the general capability:
 Please refer to https://github.com/EleutherAI/lm-evaluation-harness
 
-## Cite:
-```latex
-@article{lu2024eraser,
-  title={Eraser: Jailbreaking defense in large language models via unlearning harmful knowledge},
-  author={Lu, Weikai and Zeng, Ziqian and Wang, Jianwei and Lu, Zhengdong and Chen, Zelin and Zhuang, Huiping and Chen, Cen},
-  journal={arXiv preprint arXiv:2404.05880},
-  year={2024}
-}
-```
