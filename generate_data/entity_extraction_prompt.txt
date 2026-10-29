@@ -1,0 +1,11 @@
+Please carefully read the following text, extract all named entities contained within it in the specified format:
+"
+{}
+"
+Format:
+1. The first entity
+2. The second entity
+3. The third entity
+[More Entity]
+
+The entity you extracted:
